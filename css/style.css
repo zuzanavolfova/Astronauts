@@ -38,10 +38,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.white {
-  color: white;
-}
-
 header {
   position: -webkit-sticky;
   position: sticky;
