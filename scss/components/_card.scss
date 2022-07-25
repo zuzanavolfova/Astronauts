@@ -1,0 +1,27 @@
+
+@use '../base/color';
+.list {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    &__item {
+        padding: 20px;
+        background-color: white;
+        max-width: 300px;
+        flex-grow: 1;
+    }
+    &__description {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    &__content {
+        line-height: 2;
+    }
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
