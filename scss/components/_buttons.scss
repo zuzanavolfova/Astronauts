@@ -1,0 +1,12 @@
+@use '../base/color';
+
+.menu-mobile {
+    &__button {
+        color: color.$color-primary;
+        background-color: rgba(255, 255, 255, 38%);
+        font-weight: bold;
+        padding: 10px;
+        border: 0;
+        border-radius: 4px;
+    }
+}

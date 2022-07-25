@@ -1,1 +1,29 @@
-/*# sourceMappingURL=style.css.map */
+.menu-mobile__button {
+  color: rgb(255, 184, 0);
+  background-color: rgba(255, 255, 255, 0.38);
+  font-weight: bold;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 20px;
+  background-image: url(/pictures/space.jpg);
+  background-size: cover;
+  background-repeat: inherit;
+}
+
+.menu-mobile__list {
+  display: none;
+  color: white;
+}
