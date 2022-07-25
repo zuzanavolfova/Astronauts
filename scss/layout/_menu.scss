@@ -1,7 +1,18 @@
+@use '../base/color';
 .menu-mobile {
-   
     &__list {
-        display: none;
-        color: white;
-        }
+        display :none;
+        background-color: white;
+        position: absolute;
+        border-radius: 4px;
+        padding: 20px;
+    }
+    &__item {
+        list-style: none;
+    }
+    &__link {
+        text-decoration:none;
+        color: color.$color-text;
+    }
+
 }

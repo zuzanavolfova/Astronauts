@@ -25,5 +25,15 @@ body {
 
 .menu-mobile__list {
   display: none;
-  color: white;
+  background-color: white;
+  position: absolute;
+  border-radius: 4px;
+  padding: 20px;
+}
+.menu-mobile__item {
+  list-style: none;
+}
+.menu-mobile__link {
+  text-decoration: none;
+  color: rgb(84, 84, 84);
 }
