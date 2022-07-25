@@ -7,6 +7,20 @@
   border-radius: 4px;
 }
 
+.insert {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.insert__description {
+  display: block;
+  margin: 2px 0;
+}
+.insert__item {
+  color: white;
+  font-size: 12px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -22,6 +36,10 @@ body {
   background-size: cover;
   background-repeat: inherit;
   font-family: "Roboto", sans-serif;
+}
+
+.white {
+  color: white;
 }
 
 header {
