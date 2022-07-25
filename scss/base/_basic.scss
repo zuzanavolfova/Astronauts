@@ -1,3 +1,5 @@
+@use 'typography';
+
 html {
     box-sizing: border-box;
 }
@@ -12,4 +14,6 @@ body {
     background-image: url(/pictures/space.jpg);
     background-size: cover;
     background-repeat:inherit;
+    font-family: typography.$font-primary;
 }
+

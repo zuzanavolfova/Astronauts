@@ -21,6 +21,31 @@ body {
   background-image: url(/pictures/space.jpg);
   background-size: cover;
   background-repeat: inherit;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 50px 1fr;
+  grid-template-areas: "menu title";
+}
+
+.menu-mobile__button {
+  grid-area: menu;
+}
+
+.header__title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  grid-area: title;
 }
 
 .menu-mobile__list {
