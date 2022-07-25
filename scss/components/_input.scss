@@ -1,7 +1,11 @@
 .insert {
+    &__area{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    padding: 20px 0;
+    }
     &__description{
         display: block;
         margin: 2px 0;
@@ -9,5 +13,9 @@
     &__item {
         color: white;
         font-size: 12px;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
     }
 }

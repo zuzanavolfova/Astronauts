@@ -29,27 +29,32 @@
     </header>
 
     <section class="insert" id="insert">
-         <label class="insert__item">
-            <span class="insert__description">jméno</span>
-            <input class="insert__field" id="jmeno" type="text" placeholder="jméno">
-        </label>
-        <label class="insert__item">
-            <span class="insert__description">příjmení</span>
-            <input class="insert__field" id="prijmeni" type="text" placeholder="příjmení">
-        </label>
-        <label class="insert__item">
-            <span class="insert__description">datum narození</span>
-            <input class="insert__field" id="datumNarozeni" type="date" placeholder="datum narození">
-        </label>
-        <label class="insert__item">
-            <span class="insert__description">superschopnost</span>
-            <input class="insert__field" id="superSchopnost" type="text" placeholder="superschopnost">
-        </label>
-        
+        <div class="insert__area"> 
+            <label class="insert__item">
+                <span class="insert__description">jméno</span>
+                <input class="insert__field" id="jmeno" type="text" placeholder="jméno">
+            </label>
+            <label class="insert__item">
+                <span class="insert__description">příjmení</span>
+                <input class="insert__field" id="prijmeni" type="text" placeholder="příjmení">
+            </label>
+            <label class="insert__item">
+                <span class="insert__description">datum narození</span>
+                <input class="insert__field" id="datumNarozeni" type="date" placeholder="datum narození">
+            </label>
+            <label class="insert__item">
+                <span class="insert__description">superschopnost</span>
+                <input class="insert__field" id="superSchopnost" type="text" placeholder="superschopnost">
+            </label>
+        </div>
+        <div class="insert__button">
+            <button onclick="addAstronaut()" class="button " >Uložit astronauta </button>
+        </div>
     </section>
     <section class="list" id="list">
 
     </section>
+    <footer></footer>
     <script src="main.js"></script>
     <script src="menu.js"></script>
 </body>
