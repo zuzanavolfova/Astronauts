@@ -1,11 +1,11 @@
-let A = document.querySelector('.list');
 
 function addAstronaut(){
     addListItem();
 }
 
 function removeAstronaut  (){
-
+    // console.log('astroanut si uziva duchodu')
+    
 }
 
 function addListItem (){
@@ -29,45 +29,47 @@ function addListItem (){
     list.push(item);
     // console.log(list)
 
-    
+    let listAstronauts = document.querySelector('.list');
+
     let listItem = document.createElement('div');
     listItem.className = 'list__item';
-    A.appendChild(listItem);
+    listAstronauts.appendChild(listItem);
 
     let listName = document.createElement('div');
-    listItem.className = 'list__name';
+    listName.className = 'list__name';
     listItem.appendChild(listName);
     
     let listNameAstronaut = document.createElement('span');
     listNameAstronaut.className = 'list__content bold name';
     listNameAstronaut.textContent = jmeno;
     listName.appendChild(listNameAstronaut);
-}
-
-function displayItem ( jmeno, prijmeni, datumNarozeni, superschopnost){
-    let listClass = document.querySelector('#list');
     
-    let listItem = document.createElement('div');
-    listItem.className = 'list__item';
-    listClass.appendChild(listItem);
+    let listSurnameAstronaut = document.createElement('span');
+    listSurnameAstronaut.className = 'list__content bold surname';
+    listSurnameAstronaut.textContent = prijmeni;
+    listName.appendChild(listSurnameAstronaut);
 
-    let listName = document.createElement('div');
-    listItem.className = 'list__name';
-    listItem.appendChild(listName);
+    let listDescription = document.createElement('div');
+    listDescription.className = 'list__description';
+    listItem.appendChild(listDescription);
     
-    let listNameAstronaut = document.createElement('span');
-    listNameAstronaut.className = 'list__content bold name';
-    listNameAstronaut.textContent = jmeno;
-    listName.appendChild(listNameAstronaut);
-    console.log (jmeno)
-   
-}
+    let listdate = document.createElement('span');
+    listdate.className = 'list__content date';
+    listdate.textContent = datumNarozeni;
+    listDescription.appendChild(listdate);
 
-function createDiv(className){
-    let div = document.createElement('div');
-    div.className = className;
-}
-function createSpan(className){
-    let span = document.createElement('span');
-    span.className = className;
+    let listSuperpower = document.createElement('span');
+    listSuperpower.className = 'list__content superschopnost';
+    listSuperpower.textContent = superschopnost;
+    listDescription.appendChild(listSuperpower);
+
+    let listButton = document.createElement('div');
+    listButton.className = 'list__button';
+    listItem.appendChild(listButton);
+
+    let buttonElement = document.createElement('button');
+    buttonElement.className='button';
+    buttonElement.textContent='Smazat záznam';
+	buttonElement.onclick = removeAstronaut;
+    listButton.appendChild(buttonElement)
 }
