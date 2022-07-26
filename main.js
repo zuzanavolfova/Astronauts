@@ -1,14 +1,20 @@
+let list = [];
+const seznam = document.querySelector('#list'); 
 
-function addAstronaut(){
-    addListItem();
-}
+//nacist seznam ukolu z local storage
+writeList();
 
+//odstanit objekt
 function removeAstronaut  (){
-    // console.log('astroanut si uziva duchodu')
+    console.log('astronaut si uziva duchodu')
+    console.log(list)
+    
+//vymazat objekt
+//zobrazit seznam
     
 }
 
-function addListItem (){
+function addAstronaut (){
     let jmeno = document.querySelector('#jmeno').value;
     let prijmeni = document.querySelector('#prijmeni').value;
     let datumNarozeni = document.querySelector('#datumNarozeni').value;
@@ -28,6 +34,8 @@ function addListItem (){
     
     list.push(item);
     // console.log(list)
+
+    saveList();
 
     let listAstronauts = document.querySelector('.list');
 
@@ -72,4 +80,20 @@ function addListItem (){
     buttonElement.textContent='Smazat záznam';
 	buttonElement.onclick = removeAstronaut;
     listButton.appendChild(buttonElement)
+
+    console.log(list)
+}
+
+function saveList() {
+    localStorage.list=JSON.stringify(list)
+}
+
+function writeList(){
+    let hodnota=localStorage.list;
+// kryju situaci, kdyz nemam zadane zadne ukoly
+	if (hodnota === null || hodnota=== undefined ) {
+		list = [];
+	} else {
+		list = JSON.parse(hodnota);
+	}
 }
