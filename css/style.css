@@ -26,6 +26,7 @@ button {
 .list__item {
   padding: 20px;
   background-color: white;
+  border-radius: 4px;
   max-width: 300px;
   flex-grow: 1;
 }
@@ -36,6 +37,7 @@ button {
 }
 .list__content {
   line-height: 2;
+  margin-right: 5px;
 }
 .list__button {
   display: flex;

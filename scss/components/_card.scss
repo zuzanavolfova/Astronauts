@@ -9,6 +9,7 @@
     &__item {
         padding: 20px;
         background-color: white;
+        border-radius: 4px;
         max-width: 300px;
         flex-grow: 1;
     }
@@ -19,6 +20,7 @@
     }
     &__content {
         line-height: 2;
+        margin-right: 5px;
     }
     &__button {
         display: flex;
