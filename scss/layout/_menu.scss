@@ -24,3 +24,26 @@
     display: none;
     }
 }
+
+.menu-desktop {
+    display: none;
+    @include mixins.desktop {
+        flex-basis: 100%;
+        justify-content: center;
+        display: flex;
+        gap: 20px;
+        &__list {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+        &__item {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            &:hover {
+                background-color: color.$color-primary;
+            }
+        }
+        }
+}
