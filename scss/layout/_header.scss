@@ -27,6 +27,7 @@ header {
     font-size: 20px;
     grid-area: title;
     @include mixins.desktop {
+        font-size: 30px;
         order: 0;
         flex-basis: 100%;
         }
