@@ -41,11 +41,9 @@ function addAstronaut (){
         alert ('Zadej všechny hodnoty')
         return
     }
-    // console.log('kuk')
     let item = createItem(jmeno, prijmeni, datumNarozeni, superschopnost);
 
     list.push(item);
-    // console.log(list)
 
     saveList();
 
@@ -61,8 +59,6 @@ function addAstronaut (){
 
     const listButton = createDocElement('div', 'list__button', listItem);
     const buttonElement = createDocElement('button', 'button', listButton, 'Smazat záznam',removeAstronaut);
-
-    // console.log(list)
 }
 
 function saveList() {
