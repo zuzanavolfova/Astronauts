@@ -8,10 +8,27 @@ writeList();
 function removeAstronaut  (){
     console.log('astronaut si uziva duchodu')
     console.log(list)
-    
+
 //vymazat objekt
 //zobrazit seznam
     
+}
+
+const createDocElement = (type, className, parent, itemValue, event) => {
+    let item = document.createElement(type);
+    item.className = className;
+    item.textContent = itemValue;
+    item.onclick = event;
+    parent.appendChild(item);
+    return item;
+}
+
+
+const createItem = (jmeno, prijmeni, datumNarozeni, superschopnost) => {
+    return { 'jmeno' : jmeno,
+             'prijmeni' : prijmeni,
+             'datumNarozeni' : datumNarozeni,
+             'superschopnost' : superschopnost };
 }
 
 function addAstronaut (){
@@ -25,63 +42,27 @@ function addAstronaut (){
         return
     }
     // console.log('kuk')
-    let item = {}
-    item.jmeno=jmeno;
-    item.prijmeni=prijmeni;
-    item.datumNarozeni=datumNarozeni;
-    item.superschopnost=superschopnost;
-    // console.log(item)
-    
+    let item = createItem(jmeno, prijmeni, datumNarozeni, superschopnost);
+
     list.push(item);
     // console.log(list)
 
     saveList();
 
-    let listAstronauts = document.querySelector('.list');
+    const listItem = createDocElement('div', 'list__item', document.querySelector('.list'));
+    const listName = createDocElement('div', 'list__name', listItem);
 
-    let listItem = document.createElement('div');
-    listItem.className = 'list__item';
-    listAstronauts.appendChild(listItem);
+    const listNameAstronaut = createDocElement('span', 'list__content bold name', listName, jmeno);
+    const listSurnameAstronaut = createDocElement('span', 'list__content bold surname', listName, prijmeni);
 
-    let listName = document.createElement('div');
-    listName.className = 'list__name';
-    listItem.appendChild(listName);
-    
-    let listNameAstronaut = document.createElement('span');
-    listNameAstronaut.className = 'list__content bold name';
-    listNameAstronaut.textContent = jmeno;
-    listName.appendChild(listNameAstronaut);
-    
-    let listSurnameAstronaut = document.createElement('span');
-    listSurnameAstronaut.className = 'list__content bold surname';
-    listSurnameAstronaut.textContent = prijmeni;
-    listName.appendChild(listSurnameAstronaut);
+    const listDescription = createDocElement('div', 'list__description', listItem);
+    const listdate = createDocElement('span', 'list__content date', listDescription, datumNarozeni);
+    const listSuperpower = createDocElement('span', 'list__content superschopnost', listDescription, superschopnost);
 
-    let listDescription = document.createElement('div');
-    listDescription.className = 'list__description';
-    listItem.appendChild(listDescription);
-    
-    let listdate = document.createElement('span');
-    listdate.className = 'list__content date';
-    listdate.textContent = datumNarozeni;
-    listDescription.appendChild(listdate);
+    const listButton = createDocElement('div', 'list__button', listItem);
+    const buttonElement = createDocElement('button', 'button', listButton, 'Smazat záznam',removeAstronaut);
 
-    let listSuperpower = document.createElement('span');
-    listSuperpower.className = 'list__content superschopnost';
-    listSuperpower.textContent = superschopnost;
-    listDescription.appendChild(listSuperpower);
-
-    let listButton = document.createElement('div');
-    listButton.className = 'list__button';
-    listItem.appendChild(listButton);
-
-    let buttonElement = document.createElement('button');
-    buttonElement.className='button';
-    buttonElement.textContent='Smazat záznam';
-	buttonElement.onclick = removeAstronaut;
-    listButton.appendChild(buttonElement)
-
-    console.log(list)
+    // console.log(list)
 }
 
 function saveList() {
