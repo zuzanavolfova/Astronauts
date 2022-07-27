@@ -75,10 +75,20 @@ html {
 body {
   padding: 0;
   margin: 20px;
-  background-image: url(/pictures/space.jpg);
+  background-image: url(/pictures/space-mobile.jpg);
   background-size: cover;
   background-repeat: inherit;
   font-family: "Roboto", sans-serif;
+}
+@media screen and (min-width: 650px) {
+  body {
+    background-image: url(/pictures/space-tablet.jpg);
+  }
+}
+@media screen and (min-width: 900px) {
+  body {
+    background-image: url(/pictures/space-desktop.jpg);
+  }
 }
 
 .bold {
@@ -89,6 +99,9 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  background-image: url(/pictures/space.jpg);
+  background-size: cover;
+  background-repeat: inherit;
   display: grid;
   gap: 20px;
   align-items: center;
@@ -123,4 +136,8 @@ header {
 .menu-mobile__link {
   text-decoration: none;
   color: rgb(84, 84, 84);
+}
+.menu-mobile__icon {
+  width: 18px;
+  margin-right: 10px;
 }

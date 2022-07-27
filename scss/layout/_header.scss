@@ -1,6 +1,9 @@
 header {
     position: sticky;
     top: 0;
+    background-image: url(/pictures/space.jpg);
+    background-size: cover;
+    background-repeat:inherit;
     display: grid;
     gap: 20px;
     align-items: center;

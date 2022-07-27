@@ -15,5 +15,8 @@
         text-decoration:none;
         color: color.$color-text;
     }
-
+    &__icon {
+        width: 18px;
+        margin-right: 10px;
+    }
 }
