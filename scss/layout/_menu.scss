@@ -1,4 +1,5 @@
 @use '../base/color';
+@use '../abstracts/mixins';
 .menu-mobile {
     &__list {
         display :none;
@@ -18,5 +19,8 @@
     &__icon {
         width: 18px;
         margin-right: 10px;
+    }
+    @include mixins.desktop {
+    display: none;
     }
 }
