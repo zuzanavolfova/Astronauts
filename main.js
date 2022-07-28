@@ -33,13 +33,14 @@ function displayList(){
     elementList.innerHTML = '';
     if (list.length > 0){
         for (let i =0; i<list.length; i++ ) {
-            let item = createCard(i, list[i].jmeno, list[i].prijmeni, list[i].datumNarozeni, list[i].superschopnost);
+            let item = createCard(list[i].jmeno, list[i].prijmeni, list[i].datumNarozeni, list[i].superschopnost, i);
+
             elementList.appendChild(item);
         }
     }
 }
 
-function createCard(jmeno, prijmeni, datumNarozeni, superschopnost) {
+function createCard(jmeno, prijmeni, datumNarozeni, superschopnost, i) {
     const listItem = createDocElement('div', 'list__item', document.querySelector('.list'));
     const listName = createDocElement('div', 'list__name', listItem);
 
@@ -51,20 +52,22 @@ function createCard(jmeno, prijmeni, datumNarozeni, superschopnost) {
     const listSuperpower = createDocElement('span', 'list__content superschopnost', listDescription, superschopnost);
 
     const listButton = createDocElement('div', 'list__button', listItem);
-    const buttonElement = createDocElement('button', 'button', listButton, 'Smazat záznam', removeAstronaut);
+    const buttonElement = createDocElement('button', 'button', listButton, 'Smazat záznam', removeAstronaut)
+    buttonElement.dataset.index = i
+
     return listItem
 }
 
 //odstanit objekt
-function removeAstronaut  (){
+function removeAstronaut (){
     console.log('astronaut si uziva duchodu')
-    // let index = this.dataset.index;
-	list.splice(this,1);
+    let index = this.dataset.index;
+	list.splice(index,1);
+    console.log(this)
 
 	saveList();
 	displayList();
 }
-
 
 function addAstronaut (){
     let jmeno = document.querySelector('#jmeno').value;
@@ -82,7 +85,7 @@ function addAstronaut (){
     object.prijmeni=prijmeni;
     object.datumNarozeni = datumNarozeni;
     object.superschopnost = superschopnost;
-   
+    
     list.push(object);
 
     saveList();
